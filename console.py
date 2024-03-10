@@ -26,7 +26,7 @@ class HBNBCommand(cmd.Cmd):
     def do_create(self, line):
         """Creates a new instance,  saves it and prints the id"""
         if line == "":
-            print("** class name missing**")
+            print("** class name missing **")
         elif line in classes:
             model_new = classes[line]()
             model_new.save()
