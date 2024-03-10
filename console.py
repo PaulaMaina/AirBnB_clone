@@ -42,7 +42,7 @@ class HBNBCommand(cmd.Cmd):
         elif arg[0] not in classes:
             print("** class doesn't exist **")
         elif len(arg) != 2:
-            print ("** instance id missing **")
+            print("** instance id missing **")
         elif arg[0] + "." + arg[1] not in storage.all():
             print("** no instance found **")
         else:
@@ -56,7 +56,7 @@ class HBNBCommand(cmd.Cmd):
         elif arg[0] not in classes:
             print("** class doesn't exist **")
         elif len(arg) != 2:
-            print ("** instance id missing **")
+            print("** instance id missing **")
         elif arg[0] + "." + arg[1] not in storage.all():
             print("** no instance found **")
         else:
@@ -87,7 +87,7 @@ class HBNBCommand(cmd.Cmd):
         elif args[0] not in classes:
             print("** class doesn't exist **")
         elif len(args) < 2:
-            print ("** instance id missing **")
+            print("** instance id missing **")
         elif args[0] + "." + args[1] not in storage.all():
             print("** no instance found **")
         elif len(args) < 3:
@@ -127,7 +127,7 @@ class HBNBCommand(cmd.Cmd):
                 line = line + " " + arg_id
                 destroy = getattr(self, 'do_destroy')
                 destroy(line)
-            elif args[1].startswth('update(') and args[1].endswith(')'):
+            elif args[1].startswith('update(') and args[1].endswith(')'):
                 args[1] = args[1][7:-1]
                 args = args[1].split(", ")
                 for i in range(min(len(args), 2)):
@@ -135,6 +135,7 @@ class HBNBCommand(cmd.Cmd):
                 line += " " + " ".join(args)
                 update = getattr(self, 'do_update')
                 update(line)
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
