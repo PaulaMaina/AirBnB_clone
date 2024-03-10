@@ -3,6 +3,6 @@
 from models.base_model import BaseModel
 
 
-class State:
+class State(BaseModel):
     """Definition of the State class"""
     name = ""
